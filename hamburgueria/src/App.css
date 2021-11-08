@@ -1,0 +1,11 @@
+.App {
+}
+
+.cabeçalho {
+  display: flex;
+  justify-content: space-between;
+}
+
+.paiDeTodos {
+  display: flex;
+}
