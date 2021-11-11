@@ -6,7 +6,10 @@ function Input({ showProducts, userInput, setUserInput }) {
       className="form"
       onSubmit={(e) => e.preventDefault()}
     >
-      <input onChange={(event) => setUserInput(event.target.value)} />
+      <input
+        onChange={(event) => setUserInput(event.target.value)}
+        placeholder="Digitar Pesquisa"
+      />
       <button
         onClick={() => {
           showProducts(userInput);

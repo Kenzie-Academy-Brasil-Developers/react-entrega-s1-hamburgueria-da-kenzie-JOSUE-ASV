@@ -55,7 +55,9 @@ function App() {
   const [userInput, setUserInput] = useState("");
 
   function showProducts(id) {
-    const filter = products.filter((value) => value.category === id);
+    const filter = products.filter(
+      (value) => value.category === id || value.name === id
+    );
     setFilteredProducts(filter);
   }
 
@@ -73,7 +75,7 @@ function App() {
         <h1>
           <strong>Burguer</strong> Kenzie
         </h1>
-        <div>
+        <div className="filter">
           <Input
             showProducts={showProducts}
             userInput={userInput}
@@ -81,20 +83,32 @@ function App() {
           />
         </div>
       </header>
+      {filteredProducts.length > 0 ? (
+        <div className="busca">
+          Resultado para:
+          <div>{filteredProducts.map((value) => value.name)}</div>
+        </div>
+      ) : (
+        <div></div>
+      )}
       <section className="paiDeTodos">
-        <MenuContainer
-          products={products}
-          handleClick={handleClick}
-          filteredProducts={filteredProducts}
-        />
-        <div>
-          <h1>Carrinho de compras</h1>
-          <div>
-            <ShoppingCart
-              currentSale={currentSale}
-              setCurrentSale={setCurrentSale}
-            />
-          </div>
+        <div className="products">
+          <MenuContainer
+            products={products}
+            handleClick={handleClick}
+            filteredProducts={filteredProducts}
+          />
+        </div>
+
+        <div className="compras">
+          <header className="title">
+            <h1>Carrinho de compras</h1>
+          </header>
+
+          <ShoppingCart
+            currentSale={currentSale}
+            setCurrentSale={setCurrentSale}
+          />
         </div>
       </section>
     </main>

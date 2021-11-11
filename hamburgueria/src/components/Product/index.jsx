@@ -3,21 +3,23 @@ import "./product.css";
 function Product({ product, handleClick }) {
   console.log(product);
   return (
-    <section className="seção">
-      <div className="produto">
+    <div className="produto">
+      <div className="image">
         <img src={product.img} alt={product.name}></img>
-        <p>{product.name}</p>
-        <p>{product.category}</p>
-        <p>{product.price}</p>
-        <button
-          onClick={() => {
-            handleClick(product.id);
-          }}
-        >
-          Adicionar
-        </button>
       </div>
-    </section>
+
+      <p className="name">{product.name}</p>
+      <p className="category">{product.category}</p>
+      <p className="price">R${product.price},00</p>
+      <button
+        className="button"
+        onClick={() => {
+          handleClick(product.id);
+        }}
+      >
+        Adicionar
+      </button>
+    </div>
   );
 }
 

@@ -15,29 +15,49 @@ function ShoppingCart({ currentSale, setCurrentSale }) {
   }
 
   return (
-    <ul>
-      {currentSale.map((value) => (
-        <li key={value.id}>
-          <img src={value.img} alt={value.name}></img>
-          <p>{value.name}</p>
-          <p>{value.category}</p>
+    <ul className="segura-carrinho">
+      {currentSale.length > 0 ? (
+        currentSale.map((value) => (
+          <li key={value.id}>
+            <img src={value.img} alt={value.name}></img>
+            <div className="carrinho-flex">
+              <p>{value.name}</p>
+              <p className="category">{value.category}</p>
+            </div>
+
+            <button
+              onClick={() => {
+                remove(value);
+              }}
+            >
+              Remover
+            </button>
+          </li>
+        ))
+      ) : (
+        <div className="car">
+          <p className="name">Sua sacola esta vazia</p>
+          <p className="category">adicione itens</p>
+        </div>
+      )}
+      {currentSale.length > 0 ? (
+        <div className="bar">
+          <div className="total-flex">
+            <p className="total">Total</p>{" "}
+            <span className="cifrao">R${some(currentSale)},00</span>
+          </div>
+
           <button
             onClick={() => {
-              remove(value);
+              removeAll();
             }}
           >
-            X
+            Remover todos
           </button>
-        </li>
-      ))}
-      <button
-        onClick={() => {
-          removeAll();
-        }}
-      >
-        Remover todos
-      </button>
-      <span>total {some(currentSale)}</span>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </ul>
   );
 }
