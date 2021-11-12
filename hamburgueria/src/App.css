@@ -63,6 +63,8 @@
 
 .products {
   display: flex;
+  width: 100vw;
+  overflow: auto;
 }
 .compras {
   margin: 15px 0 20px 15px;
@@ -175,32 +177,25 @@
   color: rgba(130, 130, 130, 1);
 }
 
-@media (min-width: 414px){
-.cabeçalho{
-  width:100vw;
-  height:80px;
-  flex-direction:row;
-  justify-content:space-around;
-}
+@media (min-width: 600px) {
+  .cabeçalho {
+    width: 100%;
+    height: 80px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
-.products{
-  flex-wrap:wrap;
-}
-.paiDeTodos{
-  flex-direction:row;
-  flex-wrap:nowrap;
-  align-items:start;
-  justify-content:;
-}
-
-
-
-}
-
-
-@media (max-width: 600px){
-  .cabeçalho{
-    flex-direction:column;
-    height:139px;
+  .products {
+    flex-wrap: wrap;
+  }
+  .paiDeTodos {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: start;
+  }
+  .products {
+    display: flex;
+    overflow: auto;
+    width: 100%;
   }
 }

@@ -69,8 +69,8 @@
   margin: 0 0 15px 15px;
 }
 
-@media(min-width:414px){
-  .produto{
-    margin-bottom:20px
+@media (min-width: 600px) {
+  .produto {
+    margin-bottom: 20px;
   }
 }
