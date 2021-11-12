@@ -1,17 +1,13 @@
 .seção {
   display: flex;
   flex-direction: row;
-
   max-width: 600px;
-
   height: 2000px;
 }
 
 .produto {
   height: 346px;
   width: 300px;
-  left: 115px;
-  top: 112px;
   border: 2px solid #e0e0e0;
   box-sizing: border-box;
   border-radius: 5px;
@@ -71,4 +67,10 @@
   color: #ffffff;
   border: none;
   margin: 0 0 15px 15px;
+}
+
+@media(min-width:414px){
+  .produto{
+    margin-bottom:20px
+  }
 }
